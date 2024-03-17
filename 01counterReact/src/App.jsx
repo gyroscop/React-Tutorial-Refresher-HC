@@ -5,12 +5,21 @@ function App() {
   let [count, setCounter] = useState(0);
 
   const addValue = () => {
+    if (count == 20) {
+      alert("No more increment allowed");
+      return;
+    }
     setCounter((count = count + 1));
     console.log(count);
   };
 
   const removeValue = () => {
+    if (count == 0) {
+      alert("No more decrement allowed");
+      return;
+    }
     setCounter((count = count - 1));
+
     console.log(count);
   };
 
