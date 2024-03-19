@@ -9,7 +9,19 @@ function App() {
       alert("No more increment allowed");
       return;
     }
-    setCounter((count = count + 1));
+    setCounter((count) => count + 1);
+    setCounter((count) => count + 1); // per increment 2
+
+    /*
+    setCounter( count + 1);
+    setCounter(count + 1); // per increment 1
+    */
+
+    /*
+    setCounter( count =  count + 1);
+    setCounter(count =  count + 1); // per increment 2
+    */
+
     console.log(count);
   };
 
@@ -18,7 +30,8 @@ function App() {
       alert("No more decrement allowed");
       return;
     }
-    setCounter((count = count - 1));
+    setCounter((count = count - 1)); // works with let only
+    // setCounter((count) => count - 1);  works with const + let
 
     console.log(count);
   };
